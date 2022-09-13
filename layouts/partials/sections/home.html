@@ -116,9 +116,12 @@
       <h2 class="greeting-subtitle">{{ $author.subtitle }}</h2>
     {{ end }}
     <div class="typing-carousel">
-      <span id="ityped" class="ityped"></span>
-      <span class="ityped-cursor"></span>
-    </div>
+      {{ if $author.summary_fixed }}
+        {{ $author.summary_fixed }}
+      {{ end }}
+        <span style="font-style: oblique;" id="ityped" class="ityped"></span>
+        <span class="ityped-cursor"></span>
+      </div>
     <ul id="typing-carousel-data">
       {{ if $author.summary }}
         {{ range $author.summary }}
